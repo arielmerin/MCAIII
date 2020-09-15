@@ -8,10 +8,14 @@ En el repositorio se alojan apuntes en latex, exámenes y tares del mismo modo, 
 
 Grupo | Semestre
 ------|----------
-1022  | 2021-1
+1126  | 2021-1
 
 
 ## Horario
+Horario         | Día              | Tipo de clase       | Aula
+----------------|------------------|---------------------|------
+12:00 - 14:00   | Lunes, Miércoles, Viernes | Profesor | P112
+
 
 ## Profesores
 * *Profesor* Pedro Porras Flores
