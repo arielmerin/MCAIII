@@ -1,2 +1,7 @@
-# MCAIII
-Matemáticas para las ciencias aplicadas III
+# Matemáticas para las Ciencias Aplicadas III
+## Horario
+
+## Profesor
+
+## Collaborative
+@José Manuel
