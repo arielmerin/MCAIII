@@ -130,10 +130,43 @@ includefoot]{geometry}
 	 \newpage
 	\item$\displaystyle \int x \ln(x) \, dx$
 	\begin{align*}
-		f &= x & df &=dx \\
-		g &= \sin(x) & dg &= \cos(x)dx
+		f &= \ln(x) & df &=\frac{1}{x}dx \\
+		g &= \dfrac{x^2}{2} & dg &= xdx
 	\end{align*}
+	\begin{align*}
+		&= f \* g - \int g\,df &&\text{Empleando integración por partes}\\
+		&= \dfrac{x^2\ln(x)}{2} - \int \dfrac{x^2}{2}\dfrac{1}{x}\,dx && \text{Reemplazando por las funciones seleccionadas}\\
+		&= \dfrac{x^2\ln(x)}{2} - \int \dfrac{x}{2}\,dx && \text{Opernado}\\
+		&= \dfrac{x^2\ln(x)}{2} - \dfrac{1}{2}\int x\,dx && \text{Por la linealidad de la integral}\\
+		&= \dfrac{x^2\ln(x)}{2} - \dfrac{1}{2}\* \dfrac{x^2}{2}&& \text{Integración de polinomios}\\
+		&= \dfrac{x^2\ln(x)}{2} - \dfrac{x^2}{4}&& \text{Opernado}\\
+	\end{align*}
+	\[ \therefore \int x \ln(x) \, dx =  \dfrac{x^2\ln(x)}{2} - \dfrac{x^2}{4} + C\]
+	
 	\item$\displaystyle \int e^{x} \sin(x) \, dx$
+	\begin{align*}
+		f &= \sin(x) & df &=\cos(x)dx \\
+		g &= e^x & dg &= e^xdx
+	\end{align*}
+	\begin{align*}
+	&= f \* g - \int g\,df &&\text{Empleando integración por partes}\\
+	&= \sin(x)e^x - \underbrace{\int e^x\cos(x)\,dx}_\text{Integración por partes} && \text{Reemplazando por las funciones seleccionadas}\\
+	\end{align*}
+	\[\int e^x\cos(x)\,dx \]
+	\begin{align*}
+		f &= \cos(x) & df &=-\sin(x)dx \\
+		g &= e^x & dg &= e^xdx
+	\end{align*}
+	\begin{align*}
+		&= f \* g - \int g\,df &&\text{Empleando integración por partes}\\
+		&= \cos(x)e^x - \underbrace{\int e^x\sin(x)\,dx}_\text{igual que la incial
+		} && \text{Reemplazando por las funciones seleccionadas}\\
+	\end{align*}
+	\begin{align*}
+		 \int e^{x} \sin(x) \, dx &= \sin(x)e^x - \cos(x)e^x - \int e^x\sin(x) &&\text{Regresando a la integral incial}\\
+		2\int e^{x} \sin(x) \, dx &= \sin(x)e^x - \cos(x)e^x &&\text{Sumando en ambos miembros}\\
+		&= \dfrac{e^x(\sin(x) - \cos(x)}{2}
+	\end{align*}
 \end{enumerate}
 
 \subsection*{Integración por sustitución (2.5 pts.)}
