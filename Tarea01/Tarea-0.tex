@@ -7,6 +7,7 @@
 vmargin={1.5cm,0.7cm},
 includefoot]{geometry}
 \usepackage{amsthm}
+\usepackage{mathtools}
 \usepackage{graphicx}
 
 \providecommand{\abs}[1]{\left|#1\right|}
@@ -60,9 +61,78 @@ includefoot]{geometry}
 \item Realice las siguientes integrales:
 \begin{enumerate}
 	\item$\displaystyle \int x \sin(x) \, dx$
+	\begin{align*}
+		f &= x & df &= dx\\
+		g &= -\cos(x) & dg &= \sin(x)dx
+	\end{align*}
+	\begin{align*}
+		&= f \* g - \int g\*df &&\text{Empleando integración por partes}\\
+		&= x(-\cos(x)) - \int -\cos(x)dx &&\text{Reemplazando con los valores elegidos}\\
+		&= -x\cos(x) + \int \cos(x)dx &&\text{Porque la integral es un operador lineal}\\
+		&= -x\cos(x) + \sin(x) &&\text{La integral de }\cos(x) = \sin(x)
+	\end{align*}
+	\[ \therefore \int x \sin(x) \, dx = \sin(x) - x\cos(x) + C  \]
+	
 	\item$\displaystyle \int x^2 e^x \, dx$
+	\begin{align*}
+		f &= x^2 & df &= 2x dx\\
+		g &= e^x & dg &= e^xdx
+	\end{align*}
+	\begin{align*}
+		&= f \* g - \int g\*df &&\text{Empleando integración por partes}\\
+		&= x^2 \* e^x - \int e^x \* 2xdx &&\text{Haciendo uso de las funciones elegidas}\\
+		&= e^x x^2 -2\underbrace{\int xe^xdx}_\text{Otra integral} &&\text{Sacando escalares por la linealidad de la integral}
+	\end{align*}
+	\[ \int xe^xdx = \]
+	\begin{align*}
+		f &= x & df &= dx\\
+		g &= e^x & dg &= e^xdx
+	\end{align*}
+	\begin{align*}
+		&= f \* g - \int g\*df &&\text{Empleando integración por partes}\\
+		&= x\* e^x - \int e^x \*dx &&\text{Haciendo uso de las funciones elegidas}\\
+		&= xe^x - e^x &&\text{Conocemos de Mate I la integral de }e\\
+		&= e^x(x - 1)\\
+	\end{align*}
+	\begin{align*}
+		e^x x^2 -2\int xe^xdx &= e^x x^2 -2e^x(x-1) &&\text{Reemplazando en el resultado anterior}\\
+		&= e^x(x^2 -2(x-1)) &&\text{Factorizando}
+	\end{align*}
+	\[ \therefore \int xe^xdx = e^x(x^2 -2(x-1)) \]
+	
 	\item$\displaystyle \int x^2 \sin(x) \, dx$
+	\begin{align*}
+		f &= x^2 & df &=2x\,dx \\
+		g &= -\cos(x) & dg &= \sin(x)dx
+	\end{align*}
+	\begin{align*}
+		&= f \* g - \int g\,df &&\text{Empleando integración por partes}\\
+		&= -x^2\cos(x) - \int -\cos(x)2x\,dx &&\text{Haciendo uso de las funciones elegidas}\\
+		&= -x^2\cos(x) + \underbrace{2\int x\cos(x)dx}_\text{Integración por partes} &&\text{Sabemos que la integral es un operador lineal}
+	\end{align*}
+	\[ \int x\cos(x)dx = \]
+	\begin{align*}
+		f &= x & df &=dx \\
+		g &= \sin(x) & dg &= \cos(x)dx
+	\end{align*}
+	\begin{align*}
+		&= f \* g - \int g\,df &&\text{Empleando integración por partes}\\
+		&= x\sin(x) - \int \sin(x)\,dx &&\text{Haciendo uso de las funciones elegidas}\\
+		&= x\sin(x) - (-\cos(x)) &&\text{De Mate I conocemos las integrales de las f. trigonométricas}\\
+		&= x\sin(x) + \cos(x) &&\text{Operando signos}
+	\end{align*}
+	\begin{align*}
+		\int x^2 \sin(x) \, dx &= -x^2\cos(x) + 2\int x\cos(x)dx &&\text{Reemplazando en el resultado anterior}\\
+		&= -x^2\cos(x) + 2(x\sin(x) + \cos(x)) &&\text{Factorizando }\\
+		&= \cos(x)(2 -x^2) +2x\sin(x) &&\text{ }
+	\end{align*}
+	\[ \therefore 	\int x^2 \sin(x) \, dx = \cos(x)(2 -x^2) +2x\sin(x)  +C \]
+	 \newpage
 	\item$\displaystyle \int x \ln(x) \, dx$
+	\begin{align*}
+		f &= x & df &=dx \\
+		g &= \sin(x) & dg &= \cos(x)dx
+	\end{align*}
 	\item$\displaystyle \int e^{x} \sin(x) \, dx$
 \end{enumerate}
 
