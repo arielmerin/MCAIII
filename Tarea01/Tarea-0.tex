@@ -7,14 +7,18 @@
 vmargin={1.5cm,0.7cm},
 includefoot]{geometry}
 \usepackage{amsthm}
+\usepackage{dsfont}
 \usepackage{mathtools}
 \usepackage{graphicx}
 
 \providecommand{\abs}[1]{\left|#1\right|}
 
 \newtheorem*{remark}{Recuerde}
+
 \newcommand{\tq}{ \quad \cdot  \backepsilon \cdot \quad }
+
 \newcommand{\R}{\mathds{R}}
+
 \renewcommand{\*}{\cdot}
 
 \newtheorem{theorem}{Teorema}[]
@@ -71,7 +75,7 @@ includefoot]{geometry}
 		&= -x\cos(x) + \int \cos(x)dx &&\text{Porque la integral es un operador lineal}\\
 		&= -x\cos(x) + \sin(x) &&\text{La integral de }\cos(x) = \sin(x)
 	\end{align*}
-	\[ \therefore \int x \sin(x) \, dx = \sin(x) - x\cos(x) + C  \]
+	\[ \therefore \int x \sin(x) \, dx = \sin(x) - x\cos(x) + C, C \in \R  \]
 	
 	\item$\displaystyle \int x^2 e^x \, dx$
 	\begin{align*}
@@ -98,7 +102,7 @@ includefoot]{geometry}
 		e^x x^2 -2\int xe^xdx &= e^x x^2 -2e^x(x-1) &&\text{Reemplazando en el resultado anterior}\\
 		&= e^x(x^2 -2(x-1)) &&\text{Factorizando}
 	\end{align*}
-	\[ \therefore \int xe^xdx = e^x(x^2 -2(x-1)) \]
+	\[ \therefore \int xe^xdx = e^x(x^2 -2(x-1)) + C, C \in \R \]
 	
 	\item$\displaystyle \int x^2 \sin(x) \, dx$
 	\begin{align*}
@@ -126,7 +130,7 @@ includefoot]{geometry}
 		&= -x^2\cos(x) + 2(x\sin(x) + \cos(x)) &&\text{Factorizando }\\
 		&= \cos(x)(2 -x^2) +2x\sin(x) &&\text{ }
 	\end{align*}
-	\[ \therefore 	\int x^2 \sin(x) \, dx = \cos(x)(2 -x^2) +2x\sin(x)  +C \]
+	\[ \therefore 	\int x^2 \sin(x) \, dx = \cos(x)(2 -x^2) +2x\sin(x)  + C, C \in \R \]
 	 \newpage
 	\item$\displaystyle \int x \ln(x) \, dx$
 	\begin{align*}
@@ -141,7 +145,7 @@ includefoot]{geometry}
 		&= \dfrac{x^2\ln(x)}{2} - \dfrac{1}{2}\* \dfrac{x^2}{2}&& \text{Integración de polinomios}\\
 		&= \dfrac{x^2\ln(x)}{2} - \dfrac{x^2}{4}&& \text{Opernado}\\
 	\end{align*}
-	\[ \therefore \int x \ln(x) \, dx =  \dfrac{x^2\ln(x)}{2} - \dfrac{x^2}{4} + C\]
+	\[ \therefore \int x \ln(x) \, dx =  \dfrac{x^2\ln(x)}{2} - \dfrac{x^2}{4} + C, C \in \R \]
 	
 	\item$\displaystyle \int e^{x} \sin(x) \, dx$
 	\begin{align*}
@@ -159,31 +163,74 @@ includefoot]{geometry}
 	\end{align*}
 	\begin{align*}
 		&= f \* g - \int g\,df &&\text{Empleando integración por partes}\\
-		&= \cos(x)e^x - \underbrace{\int e^x\sin(x)\,dx}_\text{igual que la incial
+		&= \cos(x)e^x - \underbrace{\int e^x\sin(x)\,dx}_\text{igual que la inicial
 		} && \text{Reemplazando por las funciones seleccionadas}\\
 	\end{align*}
 	\begin{align*}
 		 \int e^{x} \sin(x) \, dx &= \sin(x)e^x - \cos(x)e^x - \int e^x\sin(x) &&\text{Regresando a la integral incial}\\
 		2\int e^{x} \sin(x) \, dx &= \sin(x)e^x - \cos(x)e^x &&\text{Sumando en ambos miembros}\\
-		&= \dfrac{e^x(\sin(x) - \cos(x)}{2}
+		&= \dfrac{e^x(\sin(x) - \cos(x))}{2}
 	\end{align*}
+	\[ \therefore  \int e^{x} \sin(x) \, dx = \dfrac{e^x(\sin(x) - \cos(x))}{2} + C, \quad C \in \R  \]
 \end{enumerate}
 
 \subsection*{Integración por sustitución (2.5 pts.)}
 \item  Realice las siguientes integrales:
 \begin{enumerate}
 \item$\displaystyle \int \dfrac{\ln(x)}{x} \, dx$
+\begin{align*}
+	u & = \ln(x) & du &= \dfrac{1}{x}\,dx
+\end{align*}
+\begin{align*}
+	&= \int u\,du &&\text{Empleando sustitución de variable}\\
+	&= \dfrac{u^2}{2} &&\text{Por integración en polinomios}\\
+	&= \dfrac{\ln(x)^2}{2}
+\end{align*}
+\[ \therefore \int \dfrac{\ln(x)}{x} \, dx = \dfrac{\ln(x)^2}{2} + C, C \in \R \]
 \item$\displaystyle \int e^x \sin(e^x) \, dx$
 \item$\displaystyle \int xe^{-x^2} \, dx$
 \item$\displaystyle \int x\sqrt{1- x^2} \, dx$
 %\item$\displaystyle \int \tan{(x)} \, dx$
 \item$\displaystyle \int \dfrac{1}{x \ln(x)} \, dx$
+\begin{align*}
+	f&= \dfrac{1}{g(x)} & g(x) &= \ln(x)
+\end{align*}
+\begin{align*}
+	&= \int_{\ln(a)}^{\ln(b)} \dfrac{1}{u}\,du &&\text{Empeando sustitución de variable}\\
+	&= \ln\abs{u}\Bigm|_{\ln(a)}^{\ln(b)} &&\text{Pues conocemos la integral de }\dfrac{1}{x}\\
+	&= \ln\abs{\ln(b)} - \ln\abs{\ln(a)}
+\end{align*}
+\[ \therefore \int \dfrac{1}{x \ln(x)} \, dx = \ln\abs{\ln(b)} - \ln\abs{\ln(a)} + C, C \in \R \]
 \end{enumerate}
 
 \subsection*{Integración por sustitución trigonométrica (2.5 pts.)}
 \item  Realice las siguientes integrales:
 \begin{enumerate}
-\item$\displaystyle \int \sqrt{1 - x^2} \, dx$
+\item$\displaystyle \int \sqrt{1 - x^2} \, dx$\\
+Tomemos el siguiente cambio de variables con sustituciones trigonométricas
+\[  \begin{bmatrix}
+& x = \cos(x) &\\
+&dx = -\sin(x)&
+\end{bmatrix} \]
+Y recordemos las siguientes identidades trigonométricas
+\begin{align*}
+	\sin^2(x) + \cos^2(x) &= 1\\
+	\sin^2(x) &= 1 - \cos^2(x)\\
+	\sin(x) &= \sqrt{1 - \cos^2(x)} \tag{$\alpha$}\label{eq:1} \\ &y  \\
+	\sin^2(x) &= \dfrac{1 - \cos(2x)}{2} \tag{$\beta$}\label{eq:2}
+\end{align*}
+\begin{align*}
+	&= \int \sqrt{1 - \cos^2(x)} - \sin(x)\,dx &&\text{Sustituyendo en la integral original}\\
+	&= -\int \sin(x)\sin(x) &&\text{Empleando \ref{eq:1}}\\
+	&= -\int \sin^2(x) &&\text{Operando}\\
+	&= -\int \dfrac{1 - \cos(2x)}{2} &&\text{Empleando \ref{eq:2}}\\
+	&= -\dfrac{1}{2}\int 1 - \cos(2x) &&\text{Usando la linealidad de la integral}\\
+	&= -\dfrac{1}{2} \left(\int 1 - \int\cos(2x)\right) &&\text{Nuevamente usando la linealidad de la integral}\\
+	&= -\dfrac{1}{2} \left(x - \dfrac{\sin(2x)}{2}\right) &&\text{Integrando las funciones que ya conocemos}\\
+\end{align*}
+\[ \therefore \int \sqrt{1 - x^2} \, dx = -\dfrac{1}{2} \left(x - \dfrac{\sin(2x)}{2}\right) + C, C \in \R \]
+
+
 \item$\displaystyle \int \sqrt{x^2 - 1} \, dx$
 \item$\displaystyle \int \dfrac{\sqrt{1 - x^2}}{x^2} \, dx$
 \item$\displaystyle \int  \dfrac{1}{x^2 \sqrt{1 - x^2}} \, dx$
@@ -195,6 +242,23 @@ includefoot]{geometry}
 \item  Realice las siguientes integrales:
 \begin{enumerate}
 \item$\displaystyle \int \dfrac{x}{x^2 + 5x + 6} \, dx$
+\begin{align*}
+	\int \dfrac{x}{x^2 + 5x + 6} &= \dfrac{x}{(x+2)(x+3)} &&\text{Factorizando el dividendo}\\
+	&= \dfrac{A}{(x+2)} + \dfrac{B}{(x+3)}&&\text{Expresando en forma de suma el dividendo}\\
+	&= \dfrac{Ax + 3A + Bx + 2B}{(x+2)(x+3)} &&\text{Sumando ambas fracciones}\\
+	&= \dfrac{x(A + B) + 2B + 3A}{(x+2)(x+3)} &&\text{Reordenando el numerador}\\ \\
+	 A + B &= 1 &&\text{Obteniendo las ecuaciones }\\
+	 3A + 2B &= 0 &&\text{ }\\
+	 A &= 1 - B &&\text{ }\\ \\
+	 B &= 3 \implies A = -2 &&\text{ }\\
+\end{align*}
+\begin{align*}
+	\int \dfrac{x}{x^2 + 5x + 6} \, dx &= \int \left(-\dfrac{2}{(x+2)} + \dfrac{3}{(x+3)}\right) &&\text{Sustituyendo en la integral inicial}\\
+	&= -\int\dfrac{2}{(x+2)} + \int\dfrac{3}{(x+3)} &&\text{Empleando la linealidad de la integral}\\
+	&= -2\int\dfrac{1}{(x+2)} + 3\int\dfrac{3}{(x+3)} &&\text{Nuevamente empleando la linealidad de la integral}\\
+	&= -2\ln(x + 2) + 3\ln(x+3) &&\text{Calculando las integrales que ya conocemos}
+\end{align*}
+\[ \therefore \int \dfrac{x}{x^2 + 5x + 6} \, dx =  -2\ln(x + 2) + 3\ln(x+3) + C, C \in \R + C, C \in \R \]
 \item$\displaystyle \int \dfrac{x^2 +2}{x(x+2)(x-1)} \, dx$
 \item$\displaystyle \int \dfrac{x + 1}{x^2(x-1)^3} \, dx$
 \item$\displaystyle \int \dfrac{x^3 - 4x + 3}{x^2(x+1)^2} \, dx$
