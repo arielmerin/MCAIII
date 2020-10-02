@@ -1,5 +1,5 @@
 # Tarea 1 
-# Técnicas de integrción
+# Técnicas de integración
 
 ## Integrales por partes
 ## Sustitución trigonométrica
