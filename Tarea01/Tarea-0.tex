@@ -326,7 +326,50 @@ Notemos (según la propiedad mencionada al comienzo del ejercicio) que: $\tan(\t
 	&= -2\ln(x + 2) + 3\ln(x+3) &&\text{Calculando las integrales que ya conocemos}
 \end{align*}
 \[ \therefore \int \dfrac{x}{x^2 + 5x + 6} \, dx =  -2\ln(x + 2) + 3\ln(x+3)  + C, \quad C \in \R \]
-\item$\displaystyle \int \dfrac{x^2 +2}{x(x+2)(x-1)} \, dx$
+\item$\displaystyle \int \dfrac{x^2 +2}{x(x+2)(x-1)} \, dx$\\
+Utilizando el método de fracciones parciales tenemos que:\\
+\begin{center}
+	$\dfrac{x^2 +2}{x(x+2)(x-1)}= \dfrac{A}{x}+\dfrac{B}{x+2}+\dfrac{C}{x-1}\hspace{2cm}{\textbf{(1)}}$
+\end{center}
+\begin{center}
+	$(x(x+2)(x-1))(\dfrac{x^2 +2}{x(x+2)(x-1)}=\dfrac{A}{x}+\dfrac{B}{x+2}+\dfrac{C}{x-1})$
+\end{center}
+\begin{center}
+	$x^{2}+2= (x+2)(x-1)A+x(x-1)B+x(x+2)C$\\
+	$x^{2}+2= Ax^{2}+Ax-2A+Bx^{2}-Bx+Cx^{2}+2Cx$\\
+	$x^{2}+2=Ax^{2}+Bx^{2}+Cx^{2}+Ax-Bx+2Cx-2A$\\
+	$x^{2}+2=(A+B+C)x^{2}+(A-B+2C)x-2A$
+	\end{center}
+Obtenemos el siguiente sistema de ecuaciones:
+\begin{align*}
+	1=A+B+C\\
+	0=A-B+2C\\
+	2=-2A
+\end{align*}
+\begin{align*}
+	2-B = C\\
+	1=-B+2C\\
+	A=-1
+\end{align*}
+\begin{align*}
+	2-B=C\\
+	1=-B+4-2B\\
+	A=-1
+\end{align*}
+\begin{align*}
+	C=1\\
+	B=1\\
+	A=-1
+\end{align*}
+Sustituyendo en \textbf{(1)}, tenemos que $\dfrac{-1}{x}+\dfrac{1}{x+2}+\dfrac{1}{x-1}$\\
+Por lo tanto, tenemos que resolver la siguiente integral.
+\begin{align*}
+	\int \dfrac{x^2 +2}{x(x+2)(x-1)} \, dx= \int \dfrac{-1}{x}+\dfrac{1}{x+2}+\dfrac{1}{x-1}dx\\
+	&= -\int \frac{1}{x}dx+\int \dfrac{1}{x+2}dx +\int \frac{1}{x-1}dx &&\text{Utilizando propiedades de la integral}
+	&= -\ln(x)+\ln(x+2)\ln(x-1)
+\end{align*}
+\[\therefore  \int \dfrac{x^2 +2}{x(x+2)(x-1)} \, dx = -\ln(x)+\ln(x+2)\ln(x-1)+c\]
+
 \item$\displaystyle \int \dfrac{x + 1}{x^2(x-1)^3} \, dx$
 \item$\displaystyle \int \dfrac{x^3 - 4x + 3}{x^2(x+1)^2} \, dx$
 \item$\displaystyle \int  \dfrac{3x^2 + 1}{(x^2 +1 ) (x^2 + x +1)} \, dx$
