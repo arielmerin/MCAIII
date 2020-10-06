@@ -285,7 +285,40 @@ También recordemos que $\sec^{2}(x)-\tan^{2}(x)=1$
 \end{align*}
 Notemos (según la propiedad mencionada al comienzo del ejercicio) que: $\tan(\theta)= \sqrt{\sec^{2}(\theta)-1}$. Y además $x = \sec(\theta)$. Entonces: $\tan(\theta)=\sqrt{x^{2}-1}$
 \[\therefore \int \sqrt{x^2 - 1} \, dx= \frac{1}{2}\cdot x\sqrt{x^{2}-1}-\frac{1}{2}\cdot\ln(x+\sqrt{x^{2}-1})+c\]
+
+
 \item$\displaystyle \int \dfrac{\sqrt{1 - x^2}}{x^2} \, dx$
+  Tomemos el siguiente cambio de variables con sustituciones trigonométricas
+\[  \begin{bmatrix}
+& x = \cos(x) &\\
+&dx = -\sin(x)&
+\end{bmatrix} \]
+Y recordemos las siguientes identidades trigonométricas
+\begin{align*}
+\sin^2(x) &= 1 - \cos^2(x) \tag{$\alpha$}\label{eq:1} \\ 
+\sin(x) &= \sqrt{1 - \cos^2(x)} \tag{$\theta$}\label{eq:2} \\ &y \\
+\dfrac{1}{cos^2({\theta})} = {sec^2({\theta})} \tag{$\beta$}\label{eq:3} \\
+\end{align*}
+\begin{align*}
+&= \int \dfrac{\sqrt{1 - cos^2{(\theta)}}}{cos^2{\theta}} \,-sin({\theta}) &&\text{Sustituyendo en la integra original.}\\
+&= \int \dfrac{sin({\theta})}{cos^2{\theta}} \,-sin({\theta}) &&\text{Empleando \ref{eq:2}.}\\
+&= \int \dfrac{-sin^2({\theta})}{cos^2{\theta}} &&\text{Resolviendo la multiplicación.}\\
+&= \int \dfrac{cos^2({\theta})-1}{cos^2{\theta}}, d\theta &&\text{Ya que: $cos^2({\theta})-1 = sin^2({\theta})$.}\\
+&= \int \dfrac{cos^2({\theta})}{cos^2{\theta}} d\theta - \int \dfrac{1}{cos^2({\theta})} d\theta &&\text{Por propiedad de derivada.}\\
+&= \int d\theta - \int \dfrac{1}{cos^2({\theta})} d\theta\\
+&= \theta - \int {sec^2({\theta})} d\theta &&\text{Empleando \ref{eq:3}.}\\
+&= \theta - tan({\theta}) + c &&\text{Resolviendo la integral.}\\
+\end{align*}
+Como $ x = cos({\theta}) $ entonces $ arccos(x) = arccos({\theta})$ por lo que: $arccos(x) = \theta$. \\
+\begin{align*}
+&= arccos(x) - \dfrac{sen(arccos(x))}{cos(arccos(x))} + c &&\text{Sustituyendo $\theta$.}\\
+&= arccos(x) - \dfrac{sen(arccos(x))}{x} + c &&\text{Ya que $cos(x)$ y $arccos(x)$ son funciones inversas.}\\
+&= arccos(x) - \dfrac{{\sqrt{1 - cos^2(arccos(x))}}}{x} + c\\
+&= arccos(x) - \dfrac{{\sqrt{1 - x^2}}}{x} + c &&\text{Ya que $cos(x)$ y $arccos(x)$ son funciones inversas.}\\\\
+\end{align*}
+\[ \therefore \int \dfrac{\sqrt{1 - x^2}}{x^2} \, dx = arccos(x) - \dfrac{{\sqrt{1 - x^2}}}{x} + C, C \in \R \]
+
+
 \item$\displaystyle \int  \dfrac{1}{x^2 \sqrt{1 - x^2}} \, dx$
 \item$\displaystyle \int  \dfrac{1}{ \sqrt{x^2 - 1}} \, dx$
 Tomemos la siguiente sustitución:
