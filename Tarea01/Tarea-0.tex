@@ -290,14 +290,15 @@ Notemos (según la propiedad mencionada al comienzo del ejercicio) que: $\tan(\t
 \item$\displaystyle \int \dfrac{\sqrt{1 - x^2}}{x^2} \, dx$
   Tomemos el siguiente cambio de variables con sustituciones trigonométricas
 \[  \begin{bmatrix}
-& x = \cos(x) &\\
-&dx = -\sin(x)&
+& x = \cos(\theta)) &\\
+&dx = -\sin(\theta)&
 \end{bmatrix} \]
 Y recordemos las siguientes identidades trigonométricas
 \begin{align*}
 \sin^2(x) &= 1 - \cos^2(x) \tag{$\alpha$}\label{eq:1} \\ 
-\sin(x) &= \sqrt{1 - \cos^2(x)} \tag{$\theta$}\label{eq:2} \\ &y \\
-\dfrac{1}{cos^2({\theta})} = {sec^2({\theta})} \tag{$\beta$}\label{eq:3} \\
+\sin(x) &= \sqrt{1 - \cos^2(x)} \tag{$\theta$}\label{eq:2} \\ 
+& y \\
+& \dfrac{1}{cos^2({\theta})} = {sec^2({\theta})} \tag{$\beta$}\label{eq:3} \\
 \end{align*}
 \begin{align*}
 &= \int \dfrac{\sqrt{1 - cos^2{(\theta)}}}{cos^2{\theta}} \,-sin({\theta}) &&\text{Sustituyendo en la integra original.}\\
@@ -319,7 +320,35 @@ Como $ x = cos({\theta}) $ entonces $ arccos(x) = arccos({\theta})$ por lo que: 
 \[ \therefore \int \dfrac{\sqrt{1 - x^2}}{x^2} \, dx = arccos(x) - \dfrac{{\sqrt{1 - x^2}}}{x} + C, C \in \R \]
 
 
-\item$\displaystyle \int  \dfrac{1}{x^2 \sqrt{1 - x^2}} \, dx$
+\item$\displaystyle \int  \dfrac{1}{x^2 \sqrt{1 - x^2}} \, dx$\\
+Tomemos el siguiente cambio de variables con sustituciones trigonométricas:
+\[  \begin{bmatrix}
+& x = \sin(\theta) &\\
+&dx = \cos(\theta) &
+\end{bmatrix} \]
+Y recordemos las siguientes identidades trigonométricas
+\begin{align*}
+\csc^2(x) &= \dfrac{1}{sin^2(x)} \tag{$\alpha$}\label{eq:3} \\
+\cos(x) &= \sqrt{1 - \sin^2(x)} \tag{$\theta$}\label{eq:1} \\ 
+&y\\
+\cot(arcsin(x)) &= \dfrac{\sqrt{1-x^2}}{x} \tag{$\beta$}\label{eq:2} \\
+\end{align*}
+
+\begin{align*}
+&=\int  \dfrac{1}{sin^2({\theta}) \sqrt{1 - sin^2({\theta})}} \, \cos({\theta}) d\theta&&\text{Sustituyendo en la integral original.}\\
+&=\int \dfrac{cos({\theta})}{sin^2({\theta})cos({\theta})}d\theta &&\text{Empleando \ref{eq:1}.}\\
+&=\int \dfrac{1}{sin^2({\theta})} d\theta\\
+&=\int csc^2({\theta}) d\theta  &&\text{Empleando \ref{eq:3}.}\\
+&=-\cot({\theta}) &&\text{Resolviendo la integral.}\\
+\end{align*}
+Como $ x = sin({\theta}) $ entonces $ arcsin(x) = arcsin({\theta})$ por lo que: $arcsin(x) = \theta$. \\
+\begin{align*}
+&= -\cot(arcsin(x)) &&\text{Sustituyendo $\theta$.}\\
+&= - \dfrac{\sqrt{1-x^2}}{x} &&\text{Empleando \ref{eq:2}.}
+\end{align*}
+\[ \therefore \int  \dfrac{1}{x^2 \sqrt{1 - x^2}} \, dx = -\dfrac{{\sqrt{1 - x^2}}}{x} + C, C \in \R \]
+
+
 \item$\displaystyle \int  \dfrac{1}{ \sqrt{x^2 - 1}} \, dx$
 Tomemos la siguiente sustitución:
 \[  \begin{bmatrix}
